@@ -22,4 +22,13 @@ Swift file) with
 
     swift -I swiftaoc/.build/debug -L swiftaoc/.build/debug -laoclib
 
+You can them do
+
+    > import aoclib
+    > print("foo and bar and baz".split(" and "))
+    ["foo", "bar", "baz"]
+
+(One hopes that by the end of December 2021 there will be even more
+functionality than that.)
+
 Happy Hacking!
