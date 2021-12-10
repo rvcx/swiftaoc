@@ -3,10 +3,13 @@ import XCTest
 
 final class queueTests: XCTestCase {
   func testPushPop() throws {
-    var q = Queue<Int>()
+    let q = Queue<Int>()
+    XCTAssertEqual(q.isEmpty, true)
     XCTAssertEqual(q.pop(), nil)
     q.push(1)
+    XCTAssertEqual(q.isEmpty, false)
     XCTAssertEqual(q.pop(), 1)
+    XCTAssertEqual(q.isEmpty, true)
     XCTAssertEqual(q.pop(), nil)
     q.push(2)
     q.push(3)

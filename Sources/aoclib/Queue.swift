@@ -9,6 +9,10 @@ public class Queue<T> {
   var head: Node? = nil
   var tail: Node? = nil
   
+  public var isEmpty: Bool {
+    return head == nil
+  }
+  
   public init() {}
   
   public func push(_ v: T) {
