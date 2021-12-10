@@ -46,8 +46,13 @@ extension StringProtocol {
   }
   public func stripped() -> SubSequence {
     let startPos = self.firstIndex { !$0.isWhitespace } ?? self.endIndex
-    let endPos = self.lastIndex { !$0.isWhitespace } ?? self.endIndex
-    return self[startPos...endPos]
+    var endPos = self.lastIndex { !$0.isWhitespace }
+    if let e = endPos {
+      endPos = self.index(after: e)
+    } else {
+      endPos = self.endIndex
+    }
+    return self[startPos..<endPos!]
   }
   public func split<Str: StringProtocol>(_ sep: Str) -> [SubSequence] {
     var rv = [SubSequence]()

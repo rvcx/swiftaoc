@@ -44,7 +44,10 @@ final class pystringTests: XCTestCase {
                    [0, 2, 4, 6, 8].map { s.index(s.startIndex, offsetBy: $0) })
   }
   func testStripped() throws {
+    XCTAssertEqual("foo".stripped(), "foo")
     XCTAssertEqual("  foo ".stripped(), "foo")
+    XCTAssertEqual("".stripped(), "")
+    XCTAssertEqual("   ".stripped(), "")
   }
   func testSplit() throws {
     XCTAssertEqual("fooandbar".split("and"), ["foo", "bar"])
