@@ -51,6 +51,7 @@ final class pystringTests: XCTestCase {
   }
   func testSplit() throws {
     XCTAssertEqual("fooandbar".split("and"), ["foo", "bar"])
+    XCTAssertEqual("    foo bar  baz ".split(), ["foo", "bar", "baz"])
   }
 //  func testPartition() throws {
 //    XCTAssertEqual("fooandbar".partition("and"), ("foo", "and", "bar"))

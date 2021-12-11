@@ -54,6 +54,9 @@ extension StringProtocol {
     }
     return self[startPos..<endPos!]
   }
+  public func split() -> [SubSequence] {
+    return split() { $0.isWhitespace }
+  }
   public func split<Str: StringProtocol>(_ sep: Str) -> [SubSequence] {
     var rv = [SubSequence]()
     var start = self.startIndex
