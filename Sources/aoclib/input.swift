@@ -43,3 +43,10 @@ public func parseLines(_ pattern: String,
   return outs
 }
 
+public func digitGrid(_ lines: [String]) -> [[Int]] {
+  return lines.map { $0.map { Int(String($0))! } }
+}
+
+public func numGrid(_ lines: [String]) -> [[Int]] {
+  return lines.map { $0.split().map { Int($0)! } }
+}

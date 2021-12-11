@@ -20,4 +20,12 @@ final class inputTests: XCTestCase {
                         ["Trillian", nil, nil, "gave", "50", "Zaphod"]])
     
   }
+  func testDigitGrid() {
+    XCTAssertEqual(digitGrid(["012", "345", "678"]),
+                             [[0, 1, 2], [3, 4, 5], [6, 7, 8]])
+  }
+  func testNumGrid() {
+    XCTAssertEqual(numGrid(["  1  234 23", "88   2 99     "]),
+                   [[1, 234, 23], [88, 2, 99]])
+  }
 }
